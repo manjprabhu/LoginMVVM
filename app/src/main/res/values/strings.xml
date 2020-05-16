@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">LoginPage</string>
+    <string name="app_name">Login</string>
 
     <string name="txt_login">Login</string>
-
+    <string name="txt_welcome">Welcome</string>
     <string name="et_username">Username</string>
     <string name="et_password">Password</string>
     <string name="btn_signin">Signin</string>
