@@ -6,4 +6,8 @@
     <string name="et_username">Username</string>
     <string name="et_password">Password</string>
     <string name="btn_signin">Signin</string>
+    <string name="app_setting">Settings</string>
+    <string name="light_theme">LightMode</string>
+    <string name="dark_theme">DarkMode</string>
+    <string name="system_default_theme">System Default</string>
 </resources>

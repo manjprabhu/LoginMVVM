@@ -56,28 +56,30 @@ public class LoginActivity extends AppCompatActivity implements ButtonClickCallb
         if (1 <= mainBinding.etUsername.getText().toString().length()) {
             mViewmodel.loginClick(mainBinding.etUsername.getText().toString(), mainBinding.etPassword.getText().toString())
                     .subscribe(new MaybeObserver<Boolean>() {
-                @Override
-                public void onSubscribe(Disposable d) {
-                    Log.v(TAG, "onSubscribe");
-                 }
+                        @Override
+                        public void onSubscribe(Disposable d) {
+                            Log.v(TAG, "onSubscribe");
+                        }
 
-                @Override
-                public void onSuccess(Boolean aBoolean) {
-                    Log.v(TAG, "Onsuccess:" + aBoolean);
-                    runOnUiThread(() -> Toast.makeText(LoginActivity.this, "Successful Login", Toast.LENGTH_SHORT).show());
-                    WelcomeActivity.start(LoginActivity.this, mainBinding.etUsername.getText().toString(),true);
-                }
+                        @Override
+                        public void onSuccess(Boolean aBoolean) {
+                            Log.v(TAG, "Onsuccess:" + aBoolean);
+                            runOnUiThread(() -> Toast.makeText(LoginActivity.this, "Successful Login", Toast.LENGTH_SHORT).show());
+                            WelcomeActivity.start(LoginActivity.this, mainBinding.etUsername.getText().toString(),true);
+                        }
 
-                @Override
-                public void onError(Throwable e) {
-                    Log.v(TAG, "onError:");
-                }
+                        @Override
+                        public void onError(Throwable e) {
+                            Log.v(TAG, "onError:");
+                        }
 
-                @Override
-                public void onComplete() {
-                    Log.v(TAG, "onComplete:");
-                }
-            });
+                        @Override
+                        public void onComplete() {
+                            Log.v(TAG, "onComplete:");
+                        }
+                    });
         }
     }
+
+
 }
