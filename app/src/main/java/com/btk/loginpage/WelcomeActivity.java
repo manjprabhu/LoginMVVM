@@ -1,6 +1,7 @@
 package com.btk.loginpage;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
@@ -34,6 +35,13 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mWelcomeBinding = DataBindingUtil.setContentView(this,R.layout.activity_welcome);
 
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar !=null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle(getString(R.string.txt_welcome));
+        }
+
+
         if(getIntent()!=null && getIntent().getExtras()!=null) {
             String user = getIntent().getExtras().getString("username");
             mWelcomeBinding.setUsername(user);
@@ -53,6 +61,10 @@ public class WelcomeActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_setting:
                 openAppSettings();
+                break;
+
+            case android.R.id.home:
+                onBackPressed();
                 break;
         }
         return super.onOptionsItemSelected(item);

@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity implements ButtonClickCallb
                         public void onSuccess(Boolean aBoolean) {
                             Log.v(TAG, "Onsuccess:" + aBoolean);
                             runOnUiThread(() -> Toast.makeText(LoginActivity.this, "Successful Login", Toast.LENGTH_SHORT).show());
-                            WelcomeActivity.start(LoginActivity.this, mainBinding.etUsername.getText().toString(),true);
+                            WelcomeActivity.start(LoginActivity.this, mainBinding.etUsername.getText().toString(),false);
                         }
 
                         @Override
