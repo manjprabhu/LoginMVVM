@@ -19,7 +19,7 @@ public class LoginViewModel extends ViewModel {
     }
 
     private void validateCredentials(MaybeEmitter<Boolean> emitter, String username, String password) {
-        if(validateUserName(username)) {
+        if (validateUserName(username)) {
             emitter.onSuccess(true);
         } else {
             emitter.onError(new Throwable("Autentication failed"));

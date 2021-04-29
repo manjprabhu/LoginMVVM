@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AppSettingActivity"
+        <activity
+            android:name=".AppSettingActivity"
             android:label="@string/app_setting"></activity>
         <activity android:name=".WelcomeActivity" />
         <activity

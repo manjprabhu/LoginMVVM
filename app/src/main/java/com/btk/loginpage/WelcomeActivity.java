@@ -20,12 +20,12 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private ActivityWelcomeBinding mWelcomeBinding;
 
-    public static void start(Activity activity,String user,boolean finishCurrent) {
+    public static void start(Activity activity, String user, boolean finishCurrent) {
         Intent intent = new Intent();
-        intent.setClass(activity,WelcomeActivity.class);
-        intent.putExtra("username",user);
+        intent.setClass(activity, WelcomeActivity.class);
+        intent.putExtra("username", user);
         activity.startActivity(intent);
-        if(finishCurrent) {
+        if (finishCurrent) {
             activity.finish();
         }
     }
@@ -33,16 +33,16 @@ public class WelcomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mWelcomeBinding = DataBindingUtil.setContentView(this,R.layout.activity_welcome);
+        mWelcomeBinding = DataBindingUtil.setContentView(this, R.layout.activity_welcome);
 
         ActionBar actionBar = getSupportActionBar();
-        if(actionBar !=null) {
+        if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setTitle(getString(R.string.txt_welcome));
         }
 
 
-        if(getIntent()!=null && getIntent().getExtras()!=null) {
+        if (getIntent() != null && getIntent().getExtras() != null) {
             String user = getIntent().getExtras().getString("username");
             mWelcomeBinding.setUsername(user);
         }
@@ -51,7 +51,7 @@ public class WelcomeActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.main_menu,menu);
+        menuInflater.inflate(R.menu.main_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -72,7 +72,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private void openAppSettings() {
         Intent intent = new Intent();
-        intent.setClass(this,AppSettingActivity.class);
+        intent.setClass(this, AppSettingActivity.class);
         startActivity(intent);
     }
 }
