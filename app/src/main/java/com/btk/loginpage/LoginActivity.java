@@ -58,12 +58,12 @@ public class LoginActivity extends AppCompatActivity implements ButtonClickCallb
                     .subscribe(new MaybeObserver<Boolean>() {
                         @Override
                         public void onSubscribe(Disposable d) {
-                            Log.v(TAG, "onSubscribe");
+                            LoggerUtils.Logv(TAG, "onSubscribe");
                         }
 
                         @Override
                         public void onSuccess(Boolean aBoolean) {
-                            Log.v(TAG, "Onsuccess:" + aBoolean);
+                            LoggerUtils.Logv(TAG, "Onsuccess:" + aBoolean);
                             runOnUiThread(() -> Toast.makeText(LoginActivity.this, "Successful Login", Toast.LENGTH_SHORT).show());
                             WelcomeActivity.start(LoginActivity.this, mainBinding.etUsername.getText().toString(), false);
                         }
@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity implements ButtonClickCallb
 
                         @Override
                         public void onComplete() {
-                            Log.v(TAG, "onComplete:");
+                            LoggerUtils.Logv(TAG, "onComplete:");
                         }
                     });
         }
