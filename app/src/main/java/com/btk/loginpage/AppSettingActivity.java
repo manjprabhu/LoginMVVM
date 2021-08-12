@@ -3,7 +3,6 @@ package com.btk.loginpage;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +13,7 @@ import com.btk.loginpage.databinding.ActivityAppSettingBinding;
 
 public class AppSettingActivity extends AppCompatActivity {
 
+    private final String TAG = AppSettingActivity.class.getSimpleName();
     private final String PREF_THEME_KEY = "theme_key";
     private ActivityAppSettingBinding mBinding;
 
@@ -45,7 +45,7 @@ public class AppSettingActivity extends AppCompatActivity {
 
         String currentTheme = getCurrentTheme();
 
-        Log.v("===", "Theme:" + currentTheme);
+        LoggerUtils.Logi(TAG, "Theme:" + currentTheme);
 
         if (currentTheme.equalsIgnoreCase("themeLight")) {
             mBinding.themeDark.setChecked(false);

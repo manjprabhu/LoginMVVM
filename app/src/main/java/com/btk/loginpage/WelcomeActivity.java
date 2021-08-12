@@ -17,7 +17,6 @@ import com.btk.loginpage.databinding.ActivityWelcomeBinding;
 public class WelcomeActivity extends AppCompatActivity {
 
     private static final String TAG = WelcomeActivity.class.getSimpleName();
-
     private ActivityWelcomeBinding mWelcomeBinding;
 
     public static void start(Activity activity, String user, boolean finishCurrent) {

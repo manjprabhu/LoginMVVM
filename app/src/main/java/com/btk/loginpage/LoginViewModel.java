@@ -15,7 +15,7 @@ public class LoginViewModel extends ViewModel {
         if (validateUserName(username)) {
             emitter.onSuccess(true);
         } else {
-            emitter.onError(new Throwable("Autentication failed"));
+            emitter.onError(new Throwable("Authentication failed"));
         }
     }
 
