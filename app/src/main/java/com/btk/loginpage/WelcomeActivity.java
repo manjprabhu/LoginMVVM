@@ -40,7 +40,6 @@ public class WelcomeActivity extends AppCompatActivity {
             actionBar.setTitle(getString(R.string.txt_welcome));
         }
 
-
         if (getIntent() != null && getIntent().getExtras() != null) {
             String user = getIntent().getExtras().getString("username");
             mWelcomeBinding.setUsername(user);
@@ -56,12 +55,10 @@ public class WelcomeActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
         switch (item.getItemId()) {
             case R.id.action_setting:
                 openAppSettings();
                 break;
-
             case android.R.id.home:
                 onBackPressed();
                 break;
