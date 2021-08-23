@@ -17,7 +17,6 @@ import com.btk.loginpage.databinding.ActivityWelcomeBinding;
 public class WelcomeActivity extends AppCompatActivity {
 
     private static final String TAG = WelcomeActivity.class.getSimpleName();
-    private ActivityWelcomeBinding mWelcomeBinding;
 
     public static void start(Activity activity, String user, boolean finishCurrent) {
         Intent intent = new Intent();
@@ -32,7 +31,7 @@ public class WelcomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mWelcomeBinding = DataBindingUtil.setContentView(this, R.layout.activity_welcome);
+        ActivityWelcomeBinding mWelcomeBinding = DataBindingUtil.setContentView(this, R.layout.activity_welcome);
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
