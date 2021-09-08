@@ -55,7 +55,6 @@ public class LoginActivity extends AppCompatActivity implements ButtonClickCallb
                             });
             mCompositeDisposable.add(disposable);
         }
-
     }
 
     private void onLogin(boolean result) {
